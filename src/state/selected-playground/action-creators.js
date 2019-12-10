@@ -11,9 +11,8 @@ import {
   RESERVATION_CANCELED,
   FAILD_CANCEL_RESERVATION
 } from "./actions";
-import { PlaygroundDto } from "../../proxy/dtos/classes";
 import { HttpClient } from "../../services/http-client/http-client-service";
-import { State } from "..";
+import { State } from "../state";
 
 import * as _ from "lodash";
 
