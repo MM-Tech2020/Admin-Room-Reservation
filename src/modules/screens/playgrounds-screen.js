@@ -196,7 +196,7 @@ class PlayGroundContainer extends Component {
                                 }}
                                 note
                               >
-                                Sport Type: {playground.gameType}
+                                Room type: {playground.gameType}
                               </Text>
                               <Text
                                 style={{
