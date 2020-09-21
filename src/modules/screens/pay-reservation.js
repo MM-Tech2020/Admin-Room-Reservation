@@ -67,7 +67,7 @@ class PayReservationContainer extends Component {
                 this.props.navigation.navigate("PlaygroundsScreen");
               }}
             >
-              <Text>Play grounds</Text>
+              <Text>Rooms</Text>
             </Button>
 
             {/* <Button >

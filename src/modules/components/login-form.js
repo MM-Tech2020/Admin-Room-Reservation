@@ -15,7 +15,6 @@ import {
 
 import { StackActions, NavigationActions } from "react-navigation";
 
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 import { UserLoginModel } from "../../proxy/models";
 
@@ -57,10 +56,10 @@ export class LoginForm extends Component {
     const loadingSpinner = this.props.loading ? (
       <Spinner color="black" />
     ) : (
-      <Text bold black margin20>
-        {this.props.errorMessage}
-      </Text>
-    );
+        <Text bold black margin20>
+          {this.props.errorMessage}
+        </Text>
+      );
 
     return (
       <View
@@ -105,47 +104,45 @@ export class LoginForm extends Component {
             >
               Sign in
             </Text>
-            <KeyboardAwareScrollView>
-              <Form
-                style={{
-                  marginTop: -10,
-                  margin: 30
+            <Form
+              style={{
+                marginTop: -10,
+                margin: 30
+              }}
+            >
+              <Item floatingLabel style={{ margin: 5 }}>
+                <Icon active name="phone-portrait" />
+                <Label>Mobile Number</Label>
+                <Input
+                  disabled={this.props.loading}
+                  onChangeText={txt => {
+                    this.setState({ username: txt });
+                  }}
+                />
+              </Item>
+              <Item floatingLabel style={{ margin: 5 }}>
+                <Icon active name="lock" />
+                <Label>Password</Label>
+                <Input
+                  disabled={this.props.loading}
+                  secureTextEntry={true}
+                  onChangeText={txt => {
+                    this.setState({ password: txt });
+                  }}
+                />
+              </Item>
+              <Button
+                full
+                rounded
+                disabled={this.props.loading}
+                style={{ marginTop: 20, backgroundColor: "black" }}
+                onPress={() => {
+                  this.props.tryLogin(this.state);
                 }}
               >
-                <Item floatingLabel style={{ margin: 5 }}>
-                  <Icon active name="phone-portrait" />
-                  <Label>Mobile Number</Label>
-                  <Input
-                    disabled={this.props.loading}
-                    onChangeText={txt => {
-                      this.setState({ username: txt });
-                    }}
-                  />
-                </Item>
-                <Item floatingLabel style={{ margin: 5 }}>
-                  <Icon active name="lock" />
-                  <Label>Password</Label>
-                  <Input
-                    disabled={this.props.loading}
-                    secureTextEntry={true}
-                    onChangeText={txt => {
-                      this.setState({ password: txt });
-                    }}
-                  />
-                </Item>
-                <Button
-                  full
-                  rounded
-                  disabled={this.props.loading}
-                  style={{ marginTop: 20, backgroundColor: "black" }}
-                  onPress={() => {
-                    this.props.tryLogin(this.state);
-                  }}
-                >
-                  <Text>Sign in</Text>
-                </Button>
-              </Form>
-            </KeyboardAwareScrollView>
+                <Text>Sign in</Text>
+              </Button>
+            </Form>
 
             {loadingSpinner}
           </ImageBackground>

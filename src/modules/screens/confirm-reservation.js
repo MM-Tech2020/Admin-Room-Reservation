@@ -112,18 +112,18 @@ class ConfirmReservationContainer extends Component {
                 {this.state.duration *
                   (this.props.selectedHour >
                     this.props.selectedPlayground.switchingHour &&
-                  this.props.selectedHour <
+                    this.props.selectedHour <
                     this.props.selectedPlayground.switchingHour + 12
                     ? this.props.selectedPlayground.morningPrice
                     : this.props.selectedPlayground.nightPrice)
-                // (this.props.selectedHour + this.state.duration <
-                // this.props.selectedPlayground.switchingHour
-                //   ? (this.props.selectedHour +
-                //       this.state.duration -
-                //       this.props.selectedPlayground.switchingHour) *
-                //     (this.props.selectedPlayground.nightPrice -
-                //       this.props.selectedPlayground.morningPrice)
-                //   : 0)
+                  // (this.props.selectedHour + this.state.duration <
+                  // this.props.selectedPlayground.switchingHour
+                  //   ? (this.props.selectedHour +
+                  //       this.state.duration -
+                  //       this.props.selectedPlayground.switchingHour) *
+                  //     (this.props.selectedPlayground.nightPrice -
+                  //       this.props.selectedPlayground.morningPrice)
+                  //   : 0)
                 }
               </Label>
             </Item>
@@ -156,7 +156,7 @@ class ConfirmReservationContainer extends Component {
                 this.props.navigation.navigate("PlaygroundsScreen");
               }}
             >
-              <Text>Play grounds</Text>
+              <Text>Rooms</Text>
             </Button>
 
             {/* <Button >

@@ -94,7 +94,7 @@ class PlayGroundContainer extends Component {
           }}
         />
       ),
-      title: "Play grounds",
+      title: "Rooms",
       headerLeft: (
         <Button
           onPress={() => {
